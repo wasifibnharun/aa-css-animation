@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes box {    
+    0% {
+
+    }
+}
+
+.btn {
+    height: 45px;
+    width: 180px;
+    /* background: red; */
+    background: transparent;
+    border: 2px solid red;
+    color: red;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover{
+    background: transparent;
+    /* border: 2px solid red; */
+    color: white;
+    /* transform: rotateY(360deg); */
+    /* transform: scale(1.1); */
+    /* transform: translate(20px, 50px); */
+    /* transform: skew(10deg); */
+}
+
+.colorBox {
+    height: 100%;
+    width: 100%;
+    background: green;
+    position: absolute;
+    left: 100%;
+    transition: all ease-in-out 0.4s;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.btn:hover .colorBox {
+    left: 0;
+    border-radius: 0;
+}
+
+.border-box {
+    border: 5px solid black;
+    height: 500px;
+    width: 1000px;
+}
+
+.box{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    color: red;
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.border-box:hover .box{
+    animation: moving-right 3s forwards 0.1s;
+}
+
+.border-box:not(:hover) .box{
+    animation: moving-left 1s forwards;
+}
+
+@keyframes moving-right {
+    0% {
+        transform: translate(0);
+        height: 200px;
+        width: 200px;
+        color: red;
+    }
+
+    25% {
+        transform: translateX(800px);
+        height: 200px;
+        width: 200px;
+        color: red;
+    }
+
+    50% {
+        transform: translate(800px, 300px);
+        height: 200px;
+        width: 200px;
+        color: red;
+    }
+    75% {
+        transform: translate(0, 300px);
+        height: 200px;
+        width: 200px;
+        color: red;
+    }
+    100% {
+        height: 500px;
+        width: 1000px;
+        color: white;
+    }
+}
+
+@keyframes moving-left {
+    0% {
+        height: 500px;
+        width: 1000px;
+        color: white;
+    }
+
+    100% {
+        transform: translate(0);
+        height: 200px;
+        width: 200px;
+        color: red;
+    }
+}
